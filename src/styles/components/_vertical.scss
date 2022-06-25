@@ -1,0 +1,34 @@
+.vertical {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-1;
+    width: 117px;
+    height: 100vh;
+    margin-top: -91px;
+
+    .icons {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        img {
+            width: 64px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+        }
+    }
+
+    .copyright {
+        color: $color-2;
+        font-size: 12px;
+        writing-mode: vertical-lr; // vertical orientation
+        transform: rotate(180deg); // flip 180
+        position: absolute;
+        bottom: 59px;
+    }
+
+    
+}

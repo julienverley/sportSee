@@ -1,0 +1,54 @@
+.dashboard {
+    background-color: yellowgreen;
+    width: 100%;
+    margin: 68px 90px 88px 109px;
+
+    .dashboard-header {
+
+        .dashboard-header-top {
+            display: flex;
+            font-size: 48px;
+
+            .dashboard-header-top-firstname {
+                margin-left: 12px;
+                color: $color-3;
+                font-weight: 500;
+            }
+
+        }
+        .dashboard-header-bottom {
+            font-weight: 400;
+            font-size: 18px;
+        }
+
+    }
+
+    .dashboard-main {
+        display: flex;
+
+        .dashboard-main-left {
+            display: flex;
+            flex-direction: column;
+
+            .dashboard-main-left-top {
+                background-color: yellow;
+                width: 835px;
+                height: 320px;
+            }
+
+            .dashboard-main-left-bottom {
+                display: flex;
+                background-color: blue;
+                width: 835px;
+                height: 258px;
+            }
+        }
+        .dashboard-main-right {
+            display: flex;
+            flex-direction: column;
+            background-color: beige;
+            width: 258px;
+        }
+
+    }
+}
