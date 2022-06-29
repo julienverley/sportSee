@@ -4,13 +4,15 @@ import Header from "../components/Header";
 import Vertical from "../components/Vertical";
 
 const Home = () => {
-  return <div>
-    <Header />
-    <div className="main">
+  return (
+    <div>
+      <Header />
+      <div className="main">
         <Vertical />
-        <Dashboard /> 
+        <Dashboard />
+      </div>
     </div>
-  </div>;
+  );
 };
 
 export default Home;

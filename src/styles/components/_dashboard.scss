@@ -1,5 +1,4 @@
 .dashboard {
-    background-color: yellowgreen;
     width: 100%;
     margin: 68px 90px 88px 109px;
 
@@ -8,17 +7,18 @@
         .dashboard-header-top {
             display: flex;
             font-size: 48px;
+            margin-bottom: 41px;
 
             .dashboard-header-top-firstname {
                 margin-left: 12px;
                 color: $color-3;
                 font-weight: 500;
             }
-
         }
         .dashboard-header-bottom {
             font-weight: 400;
             font-size: 18px;
+            margin-bottom: 77px;
         }
 
     }
@@ -26,29 +26,50 @@
     .dashboard-main {
         display: flex;
 
-        .dashboard-main-left {
+        .dashboard-main {
             display: flex;
             flex-direction: column;
 
-            .dashboard-main-left-top {
+            .dashboard-main-activity {
                 background-color: yellow;
-                width: 835px;
+                width: 835px; //
                 height: 320px;
+                border-radius: 5px;
+                margin-bottom: 30px;
             }
 
-            .dashboard-main-left-bottom {
+            .dashboard-main-3charts {
                 display: flex;
-                background-color: blue;
-                width: 835px;
+                justify-content: space-between;
+                width: 835px; // 
                 height: 258px;
+
+                .dashboard-main-3charts-average {
+                    background-color: #f00000;
+                    width: 263px; //
+                    border-radius: 5px;
+                }
+                .dashboard-main-3charts-activities {
+                    background-color: grey;
+                    width: 263px; //
+                    border-radius: 5px;
+                    margin: 0 30px;
+                }
+                .dashboard-main-3charts-score {
+                    background-color: lightgrey;
+                    width: 263px; //
+                    border-radius: 5px;
+                }
+
             }
         }
-        .dashboard-main-right {
+        .dashboard-keydatas {
             display: flex;
             flex-direction: column;
-            background-color: beige;
-            width: 258px;
-        }
+            justify-content: space-between;
+            width: 258px; // 
+            margin-left: 31px;
 
+        }
     }
 }
