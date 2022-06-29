@@ -16,7 +16,7 @@ const Activity = () => {
   // .substr(0, 9) sur day : garder le dernier chiffre ?
   // .length : position du tableau ? 
   
-  console.log(data.USER_ACTIVITY[0].sessions[0]);
+  console.log(data.USER_ACTIVITY[0].sessions);
 
   return (
     // <div>

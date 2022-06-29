@@ -10,7 +10,7 @@ import {
   Legend,
 } from "recharts";
 
-console.log(data.USER_AVERAGE_SESSIONS[1].sessions[0]);
+console.log(data.USER_AVERAGE_SESSIONS[1].sessions);
 
 const Average = () => {
   return (
@@ -37,7 +37,6 @@ const Average = () => {
         stroke="#8884d8"
         activeDot={{ r: 8 }}
       />
-      <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
     </LineChart>
   );
 };
