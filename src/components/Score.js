@@ -22,8 +22,15 @@ const style = {
   lineHeight: "36px",
 };
 
+const dataScore = [
+  {
+    name: "score",
+    score: data.USER_MAIN_DATA[0].todayScore,
+  },
+];
+
 const Score = () => {
-  console.log(data.USER_MAIN_DATA[0].todayScore);
+  // console.log(data.USER_MAIN_DATA[0].todayScore);
   // if [0] todayScore
   // if [1] score
   return (
@@ -37,7 +44,7 @@ const Score = () => {
         innerRadius={20}
         outerRadius={140}
         barSize={10}
-        data={dataRadialBarChart}
+        data={dataScore}
         // data={data.USER_MAIN_DATA[0]}
         startAngle={80}
       >
@@ -47,7 +54,7 @@ const Score = () => {
           background
           clockWise
           // dataKey="todayScore"
-          dataKey="uv"
+          dataKey="score"
         />
         <Legend
           iconSize={10}
@@ -59,18 +66,6 @@ const Score = () => {
         />
       </RadialBarChart>
     </div>
-
-    // <div>{data.USER_MAIN_DATA[0].todayScore}</div>
-    // <PieChart width={400} height={400}>
-    //   <Pie
-    //     data={data.USER_MAIN_DATA[0].todayScore}
-    //     dataKey="todayScore"
-    //     cx={200}
-    //     cy={200}
-    //     outerRadius={60}
-    //     fill="#8884d8"
-    //   />
-    // </PieChart>
   );
 };
 

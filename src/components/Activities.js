@@ -9,16 +9,8 @@ import {
 } from "recharts";
 
 const Activities = () => {
-  console.log(data.USER_PERFORMANCE[1].data[0]);
+  //console.log(data.USER_PERFORMANCE[1].data[0]);
   return (
-    // <div>
-    //   {data.USER_PERFORMANCE[1].data.map((performance, index) => (
-    //     <div key={index}>
-    //       <div>{performance.kind}</div>
-    //       <div>{performance.value}</div>
-    //     </div>
-    //   ))}
-    // </div>
     <RadarChart
       cx={150}
       cy={150}
@@ -33,8 +25,8 @@ const Activities = () => {
       <Radar
         name="Mike"
         dataKey="value"
-        stroke="#8884d8"
-        fill="#8884d8"
+        stroke="#FF0101"
+        fill="#FF0101"
         fillOpacity={0.6}
       />
     </RadarChart>

@@ -45,12 +45,13 @@
                 height: 258px;
 
                 .dashboard-main-3charts-average {
-                    background-color: #f00000;
+                    background-color: $color-3;
                     width: 263px; //
                     border-radius: 5px;
                 }
                 .dashboard-main-3charts-activities {
-                    background-color: grey;
+                    background-color: #282D30;
+                    ;
                     width: 263px; //
                     border-radius: 5px;
                     margin: 0 30px;
