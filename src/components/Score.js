@@ -3,80 +3,78 @@ import data from "../data";
 import {
   RadialBarChart,
   RadialBar,
-  Legend,
   PolarAngleAxis,
   ResponsiveContainer,
 } from "recharts";
 
-const dataRadialBarChart = [
-  {
-    name: "50+",
-    uv: 2.63,
-    pv: 4800,
-    fill: "#d0ed57",
-  },
-  {
-    name: "unknow",
-    uv: 6.67,
-    pv: 4800,
-    fill: "#ffc658",
-  },
-];
-const style = {
-  top: 0,
-  left: 350,
-  lineHeight: "36px",
-};
-
 const dataScore = [
   {
     name: "score",
-    score: data.USER_MAIN_DATA[0].todayScore,
+    score: data.USER_MAIN_DATA[0].todayScore * 100,
   },
 ];
+console.log(dataScore[0].score);
 
-const Score = () => {
-  // console.log(data.USER_MAIN_DATA[0].todayScore);
+const Score = (score) => {
+  console.log(score);
   // if [0] todayScore
   // if [1] score
+
+  // create dataObject to params Rechart component
+  const data = [
+    // {
+    //   name: "score-reference",
+    //   uv: 100,
+    //   id: "rechartradial-bar__ref",
+    //   fill: "transparent",
+    // },
+    {
+      name: "score-passed",
+      uv: score,
+      id: "rechartradial-bar__score",
+      // fill: "#FF0101",
+      fill: "blue",
+    },
+  ];
+
   return (
-    <ResponsiveContainer>
+    <ResponsiveContainer width="100%" height="100%">
       <RadialBarChart
         width={263}
         height={258}
         cx="50%"
         cy="50%"
-        innerRadius="80%"
-        outerRadius="80%"
-        barSize={12}
-        data={dataScore}
-        startAngle={90}
+        innerRadius="65%"
+        barSize={10}
+        data={data}
+        // data={dataScore}
+        // data={[
+        //   {
+        //     fill: "none",
+        //   },
+        // ]}
+        startAngle={70}
+        endAngle={250}
+        // background={{ fill: "#FF0101" }}
       >
         <PolarAngleAxis
           type="number"
-          domain={[0, 2]}
+          domain={[0, 100]}
           angleAxisId={0}
-          tick={false}
+          tick={true} // false
         />
         <RadialBar
-          minAngle={300}
-          label={{ position: "insideStart", fill: "#FF0101" }}
+          // minAngle={300}
           background={{ fill: "#FF0101" }}
-          Clockwise={false} // dataKey="todayScore"
-          dataKey="score"
+          Clockwise={false}
+          // dataKey={dataScore[0].score}
+          dataKey={"uv"}
           cornerRadius={10}
+          max={100}
           circle
           cx="50%"
           cy="50%"
           r="80px"
-        />
-        <Legend
-          iconSize={10}
-          width={120}
-          height={140}
-          layout="vertical"
-          verticalAlign="middle"
-          wrapperStyle={style}
         />
       </RadialBarChart>
     </ResponsiveContainer>

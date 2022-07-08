@@ -115,13 +115,39 @@
                     }
                 }
                 .dashboard-main-3charts-score {
+                    position: relative;
                     background-color: #FBFBFB;
                     width: 263px; //
                     border-radius: 5px;
 
                     .dashboard-main-3charts-score-title {
+                        position: absolute;
                         font-size: 15px;
                         padding: 24px 0 0 30px;
+                    }
+                    .dashboard-main-3charts-score-result {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 95px;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+
+                        .dashboard-main-3charts-score-result-percent {
+                         font-size: 26px;
+                        }
+                        .dashboard-main-3charts-score-result-text-up {
+                            margin-top: 5px;
+                            font-size: 16px;
+                            color: #74798C;
+                        }
+                        .dashboard-main-3charts-score-result-text-down {
+                            margin-top: 5px;
+                            font-size: 16px;
+                            color: #74798C;
+                        }
                     }
                     
                 }

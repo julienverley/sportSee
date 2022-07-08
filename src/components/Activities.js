@@ -42,7 +42,7 @@ const Activities = () => {
           tickFormatter={formatAngleAxis}
           stroke="#ffffff"
         />
-        <PolarRadiusAxis axisLine={false} />
+        <PolarRadiusAxis axisLine={false} tick={false} />
         <Radar
           // name="Mike"
           dataKey="value"
