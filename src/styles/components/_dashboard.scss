@@ -20,7 +20,6 @@
             font-size: 18px;
             margin-bottom: 77px;
         }
-
     }
 
     .dashboard-main {
@@ -31,11 +30,58 @@
             flex-direction: column;
 
             .dashboard-main-activity {
-                background-color: yellow;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                background-color: #FBFBFB;
                 width: 835px; //
                 height: 320px;
                 border-radius: 5px;
                 margin-bottom: 30px;
+
+                .dashboard-main-activity-header {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 24px;
+                    margin: 24px 32px 64px 32px;
+
+                    .dashboard-main-activity-header-title {
+                        font-size: 15px;
+                        color: #20253A;
+                    }
+
+                    .dashboard-main-activity-header-right {
+                        display: flex;
+
+                        .dashboard-main-activity-header-kg {
+                            display: flex;
+                            flex-direction: row;
+                            margin-right: 32px;
+                            font-size: 14px;
+                            color: #74798C; 
+
+                            .dashboard-main-activity-header-kg-icon {
+                                margin-right: 10px;
+                            }
+                            .dashboard-main-activity-header-legend {
+                                font-size: 14px;
+                                color: #74798C;
+                            }
+                        }
+                        .dashboard-main-activity-header-kcal {
+                            display: flex;
+                            flex-direction: row;
+
+                            .dashboard-main-activity-header-kcal-icon {
+                                margin-right: 10px;
+                            }
+                            .dashboard-main-activity-header-legend {
+                                font-size: 14px;
+                                color: #74798C;
+                            }
+                        }
+                    }
+                }
             }
 
             .dashboard-main-3charts {
@@ -48,18 +94,36 @@
                     background-color: $color-3;
                     width: 263px; //
                     border-radius: 5px;
+
+                    .dashboard-main-3charts-average-title {
+                        font-size: 15px;
+                        color: #FFFFFF;
+                        margin-top: 29px;
+                        margin-left: 34px;
+                        width: 147px;
+                        opacity: 50%;
+                    }
                 }
                 .dashboard-main-3charts-activities {
                     background-color: #282D30;
-                    ;
                     width: 263px; //
                     border-radius: 5px;
                     margin: 0 30px;
+
+                    .dashboard-main-3charts-activities-radarchart {
+                        font-size: 12px;
+                    }
                 }
                 .dashboard-main-3charts-score {
-                    background-color: lightgrey;
+                    background-color: #FBFBFB;
                     width: 263px; //
                     border-radius: 5px;
+
+                    .dashboard-main-3charts-score-title {
+                        font-size: 15px;
+                        padding: 24px 0 0 30px;
+                    }
+                    
                 }
 
             }

@@ -1,0 +1,24 @@
+.activity-custom-tooltip {
+    background-color: $color-3;
+    padding: 4px 7px;
+    text-align: center;
+    font-size: 7px;
+    margin-left: 25px;
+    margin-top: -50px;
+
+    .kcal {
+        color: white;
+        padding: 12px 0;
+
+    }
+    .kg {
+        color: white;
+        padding: 12px 0;
+    }
+}
+
+.average-custom-tooltip {
+    background-color: white;
+    font-size: 8px;
+    padding: 6px 7px;
+}

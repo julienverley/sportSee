@@ -9,6 +9,8 @@ import Activity from "./Activity";
 import Average from "./Average";
 import Activities from "./Activities";
 import Score from "./Score";
+import diskgrey from "../assets/icons/diskgrey.svg";
+import diskred from "../assets/icons/diskred.svg";
 
 const Dashboard = () => {
   return (
@@ -26,22 +28,54 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-main">
         <div className="dashboard-main">
+          {/* Activity element */}
           <div className="dashboard-main-activity">
+            <div className="dashboard-main-activity-header">
+              <div className="dashboard-main-activity-header-title">
+                Activité quotidienne
+              </div>
+              <div className="dashboard-main-activity-header-right">
+                <div className="dashboard-main-activity-header-kg">
+                  <div className="dashboard-main-activity-header-kg-icon">
+                    <img src={diskgrey} />
+                  </div>
+                  <div className="dashboard-main-activity-header-legend">
+                    Poids (kg)
+                  </div>
+                </div>
+                <div className="dashboard-main-activity-header-kcal">
+                  <div className="dashboard-main-activity-header-kcal-icon">
+                    <img src={diskred} />
+                  </div>
+                  <div className="dashboard-main-activity-header-legend">
+                    Calories brûlées (kCal)
+                  </div>
+                </div>
+              </div>
+            </div>
             <Activity />
           </div>
 
           <div className="dashboard-main-3charts">
+            {/* Average session length element */}
             <div className="dashboard-main-3charts-average">
+              <div className="dashboard-main-3charts-average-title">
+                Durée moyenne des sessions
+              </div>
               <Average />
             </div>
+            {/* Activities performance radar element */}
             <div className="dashboard-main-3charts-activities">
               <Activities />
             </div>
+            {/* Score element */}
             <div className="dashboard-main-3charts-score">
+              <div className="dashboard-main-3charts-score-title">Score</div>
               <Score />
             </div>
           </div>
         </div>
+        {/* Key datas element */}
         <div className="dashboard-keydatas">
           <KeyData
             icon={calories}

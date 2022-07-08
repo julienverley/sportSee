@@ -1,6 +1,12 @@
 import React from "react";
 import data from "../data";
-import { RadialBarChart, RadialBar, Legend } from "recharts";
+import {
+  RadialBarChart,
+  RadialBar,
+  Legend,
+  PolarAngleAxis,
+  ResponsiveContainer,
+} from "recharts";
 
 const dataRadialBarChart = [
   {
@@ -34,27 +40,35 @@ const Score = () => {
   // if [0] todayScore
   // if [1] score
   return (
-    <div>
-      <div>Score</div>
+    <ResponsiveContainer>
       <RadialBarChart
         width={263}
         height={258}
-        cx={150}
-        cy={150}
-        innerRadius={20}
-        outerRadius={140}
-        barSize={10}
+        cx="50%"
+        cy="50%"
+        innerRadius="80%"
+        outerRadius="80%"
+        barSize={12}
         data={dataScore}
-        // data={data.USER_MAIN_DATA[0]}
-        startAngle={80}
+        startAngle={90}
       >
+        <PolarAngleAxis
+          type="number"
+          domain={[0, 2]}
+          angleAxisId={0}
+          tick={false}
+        />
         <RadialBar
-          minAngle={15}
+          minAngle={300}
           label={{ position: "insideStart", fill: "#FF0101" }}
-          background
-          clockWise
-          // dataKey="todayScore"
+          background={{ fill: "#FF0101" }}
+          Clockwise={false} // dataKey="todayScore"
           dataKey="score"
+          cornerRadius={10}
+          circle
+          cx="50%"
+          cy="50%"
+          r="80px"
         />
         <Legend
           iconSize={10}
@@ -65,7 +79,7 @@ const Score = () => {
           wrapperStyle={style}
         />
       </RadialBarChart>
-    </div>
+    </ResponsiveContainer>
   );
 };
 

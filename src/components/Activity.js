@@ -14,40 +14,75 @@ import {
 const Activity = () => {
   //console.log(data.USER_ACTIVITY[0].sessions[0].day);
 
+  // Tooltip
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      return (
+        <div className="activity-custom-tooltip">
+          <p className="kg">
+            {data.USER_ACTIVITY[0].sessions[0].kilogram}
+            {"kg"}
+          </p>
+          <p className="kcal">
+            {data.USER_ACTIVITY[0].sessions[0].calories}
+            {"Kcal"}
+          </p>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
-    <ResponsiveContainer width="100%" height={320}>
+    <ResponsiveContainer width="100%" height="100%">
       <BarChart
-        width={835}
-        height={320}
         data={data.USER_ACTIVITY[0].sessions}
-        // data={dataBarchart}
+        barGap={8}
         margin={{
           top: 5,
-          right: 30,
-          left: 20,
-          bottom: 5,
+          right: 29,
+          left: 43,
+          bottom: 20,
         }}
       >
-        <CartesianGrid strokeDasharray="3 3" />
-        {/* Modify date "2020-07-01" etc. to 1 etc. */}
+        <CartesianGrid strokeDasharray="1 1" vertical={false} />
         <XAxis
           dataKey="day"
-          tick={{ stroke: "red" }}
+          dy={15}
+          stroke="#9B9EAC"
+          tickLine={{ stroke: "" }}
+          // Modify date "2020-07-01" etc. to 1 etc. // Faire une factory ?
           tickFormatter={(date) => new Date(date).getDate()}
         />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        {/* Modify bar's width and radius */}
-        <Bar
+        <YAxis
+          yAxisId="kilogram"
+          dataKey="kilogram"
+          orientation="right"
+          dx={25}
+          stroke="#9B9EAC"
+          axisLine={false}
+          tickLine={{ stroke: "" }}
+          tickCount="3"
+        />
+        <YAxis
+          yAxisId="calories"
           dataKey="calories"
-          fill="#FF0101"
+          type="number"
+          hide={true}
+        />
+        <Tooltip content={<CustomTooltip />} />
+        <Bar
+          yAxisId="kilogram"
+          dataKey="kilogram"
+          fill="#282D30"
           barSize={7}
           radius={[20, 20, 0, 0]}
         />
         <Bar
-          dataKey="kilogram"
-          fill="#282D30"
+          yAxisId="calories"
+          dataKey="calories"
+          fill="#FF0101"
           barSize={7}
           radius={[20, 20, 0, 0]}
         />
