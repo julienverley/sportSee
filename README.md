@@ -1,4 +1,4 @@
-<img src="../src/assets/icons/badge-js.svg">
+<img src="../src/assets/icons/badge-js.svg" />
 
 ![Language - JS]()
 
