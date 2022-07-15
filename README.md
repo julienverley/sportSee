@@ -1,4 +1,4 @@
-![Language - Javascript](https://forthebadge.com/generator/?pbg=%23EA4560&plabel=Language&slabel=Javascript&sbg=%231E91D6)
+<img src="../src/assets/icons/badge-js.svg">
 
 ![Language - JS]()
 
