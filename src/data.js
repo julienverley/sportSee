@@ -6,9 +6,7 @@ const USER_MAIN_DATA = [
       lastName: "Dovineau",
       age: 31,
     },
-    // todayScore: 0.24,
     todayScore: 0.12,
-    // todayScore: 12,
     keyData: {
       calorieCount: 1930,
       proteinCount: 155,

@@ -1,84 +1,71 @@
-import React from "react";
-import data from "../data";
-import {
-  RadialBarChart,
-  RadialBar,
-  PolarAngleAxis,
-  ResponsiveContainer,
-} from "recharts";
+import React, { useState, useEffect } from "react";
+import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
+import ScoreLabel from "./ScoreLabel";
+import PropTypes from "prop-types";
+import axios from "axios";
 
-const dataScore = [
-  {
-    name: "score",
-    score: data.USER_MAIN_DATA[0].todayScore * 100,
-  },
-];
-console.log(dataScore[0].score);
+// API call to get user data
+const baseURL = "http://localhost:3100/user/12";
 
-const Score = (score) => {
-  console.log(score);
-  // if [0] todayScore
-  // if [1] score
+const Score = () => {
+  const [apiUserData, setApiUserData] = useState(null);
+  useEffect(() => {
+    // User data from API
+    axios.get(baseURL).then((response) => {
+      setApiUserData(response.data);
+    });
+  }, []);
+  if (!apiUserData) return null;
+ 
+  // Key from API, "todayScore" or "score" 
+  const score =
+    apiUserData.data.score * 100 || apiUserData.data.todayScore * 100;
 
-  // create dataObject to params Rechart component
+  // create dataObject for params Rechart component
   const data = [
-    // {
-    //   name: "score-reference",
-    //   uv: 100,
-    //   id: "rechartradial-bar__ref",
-    //   fill: "transparent",
-    // },
     {
       name: "score-passed",
-      uv: score,
+      value: score,
       id: "rechartradial-bar__score",
-      // fill: "#FF0101",
-      fill: "blue",
+    },
+    {
+      name: "score-reference",
+      value: 100 - score,
+      id: "rechartradial-bar__ref",
+      fill: "transparent",
     },
   ];
+  console.log(data);
 
   return (
-    <ResponsiveContainer width="100%" height="100%">
-      <RadialBarChart
-        width={263}
-        height={258}
-        cx="50%"
-        cy="50%"
-        innerRadius="65%"
-        barSize={10}
-        data={data}
-        // data={dataScore}
-        // data={[
-        //   {
-        //     fill: "none",
-        //   },
-        // ]}
-        startAngle={70}
-        endAngle={250}
-        // background={{ fill: "#FF0101" }}
-      >
-        <PolarAngleAxis
-          type="number"
-          domain={[0, 100]}
-          angleAxisId={0}
-          tick={true} // false
-        />
-        <RadialBar
-          // minAngle={300}
-          background={{ fill: "#FF0101" }}
-          Clockwise={false}
-          // dataKey={dataScore[0].score}
-          dataKey={"uv"}
-          cornerRadius={10}
-          max={100}
-          circle
-          cx="50%"
-          cy="50%"
-          r="80px"
-        />
-      </RadialBarChart>
-    </ResponsiveContainer>
+    <>
+      <ScoreLabel />
+      <ResponsiveContainer width="100%" height="100%">
+        <PieChart width={800} height={400}>
+          <Pie
+            data={data}
+            startAngle={80}
+            endAngle={450}
+            innerRadius={88}
+            outerRadius={100}
+            cornerRadius={10}
+            dataKey="value"
+          >
+            <Cell fill={"#e60000"} />
+            <Cell fill={"transparent"} stroke={"transparent"} />
+          </Pie>
+        </PieChart>
+      </ResponsiveContainer>
+    </>
   );
 };
+
+// A revoir
+// Score.propTypes = {
+//   score: PropTypes.number.isRequired,
+// };
+// Score.defaultProps = {
+//   score: "",
+// };
 
 export default Score;

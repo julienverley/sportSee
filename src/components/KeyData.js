@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 const KeyData = ({ icon, keydata, unit, type }) => {
   return (
@@ -14,5 +15,16 @@ const KeyData = ({ icon, keydata, unit, type }) => {
     </div>
   );
 };
+
+KeyData.propTypes = {
+  icon: PropTypes.string.isRequired,
+  keydata: PropTypes.number.isRequired,
+  unit: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+};
+
+// KeyData.defaultProps = {
+//   unit: '',
+// }
 
 export default KeyData;

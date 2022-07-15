@@ -1,5 +1,5 @@
-import React from "react";
-import data from "../data";
+import React, { useState, useEffect } from "react";
+// import data from "../data";
 import {
   Radar,
   RadarChart,
@@ -8,30 +8,44 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
+import PropTypes from "prop-types";
+import axios from "axios";
+
+// Format from numbers to strings
+const formatAngleAxis = (value) => {
+  const kinds = [
+    "Intensité",
+    "Vitesse",
+    "Force",
+    "Endurance",
+    "Energie",
+    "Cardio",
+  ];
+  return kinds[value - 1];
+};
+
+const baseURL = "http://localhost:3100/user/18/performance";
 
 const Activities = () => {
-  // Format kind of activities
-  const formatAngleAxis = (value) => {
-    const kinds = [
-      "Intensité",
-      "Vitesse",
-      "Force",
-      "Endurance",
-      "Energie",
-      "Cardio",
-    ];
-    return kinds[value - 1];
-  };
+  const [apiUserPerformanceData, setapiUserPerformanceData] = useState(null);
+  useEffect(() => {
+    // User Performance data from API
+    axios.get(baseURL).then((response) => {
+      setapiUserPerformanceData(response.data);
+    });
+  }, []);
+  if (!apiUserPerformanceData) return null;
 
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart
         cx="50%"
         cy="50%"
-        outerRadius="60%"
+        outerRadius="65%"
         width="50%"
         height="50%"
-        data={data.USER_PERFORMANCE[0].data}
+        // data={data.USER_PERFORMANCE[1].data}
+        data={apiUserPerformanceData.data.data}
         className="dashboard-main-3charts-activities-radarchart"
       >
         <PolarGrid radialLines={false} />
@@ -41,6 +55,7 @@ const Activities = () => {
           axisLine={false}
           tickFormatter={formatAngleAxis}
           stroke="#ffffff"
+          tick={{ dy: 4 }}
         />
         <PolarRadiusAxis axisLine={false} tick={false} />
         <Radar
@@ -53,6 +68,11 @@ const Activities = () => {
       </RadarChart>
     </ResponsiveContainer>
   );
+};
+
+// Proptypes formatAngleAxis
+formatAngleAxis.propTypes = {
+  value: PropTypes.number.isRequired,
 };
 
 export default Activities;
