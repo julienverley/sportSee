@@ -27,12 +27,12 @@ Julien Verley
 
 ## How to install
 
-# On your computer
+### On your computer
 
 - Create a main directory
 - Clone the project P9-front-end-dashboard from Github into your computer. This repo contains all the source code to run the API for the analytics of the dashboard page.
 
-# In the Visual Studio Code editor terminal
+### In the Visual Studio Code editor terminal
 
 - Change the directory to cd P9-front-end-dashboard
 - yarn command to install the dependencies
