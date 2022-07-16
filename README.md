@@ -1,27 +1,28 @@
-<img src="../src/assets/icons/badge-js.svg" />
+[![Language  - Javascript](https://img.shields.io/badge/Language_-Javascript-#f7df1e)](https://)
 
-![Language - JS]()
+# SportSee : sports coaching
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/uses-css.svg)](https://forthebadge.com)
-
-# Sleep Well : the smart alarm-clock app
-
-Sleep Well aims at developing a smart alarm clock for iPhones that monitors your breathing rhythm while you sleep to determine your sleep cycles.
+This project creates a dashboard that aims for the user to follow all informations about his/her session, calories burned etc.
 
 ## Technologies
 
-- JS
-- CSS
+- Javascript
 - React
+- CSS Sass
+- Recharts
 
-## Contribute to the project
+## Author
 
-Sleep Well is an open source project. Feel free to fork the source and contribute with your own features.
+Julien Verley
 
-## Authors
+## Dependencies
 
-Our code squad : Francis & Stéphane
+- React (v 18.2.0)
+- React-dom (v 18.2.0)
+- React-router-dom (v 6.3.0)
+- Axios (v 0.27.2)
+- Prop-types (v 15.8.1)
+- Recharts (v 2.1.12)
+- node-Sass (v 7.0.1)
 
-## Licensing
-
-This project was built under the Creative Commons licence.
+## How to install
