@@ -13,23 +13,34 @@ import {
 import PropTypes from "prop-types";
 import axios from "axios";
 
-const baseURL = "http://localhost:3100/user/18/activity";
+const baseURL = "http://localhost:3100/user/12/activity";
 
 // Red rectangle information on hover
 const CustomTooltip = ({ active, payload }) => {
+  // const [apiUserActivityData, setapiUserActivityData] = useState(null);
+  // useEffect(() => {
+  //   // User Activity data from API
+  //   axios.get(baseURL).then((response) => {
+  //     setapiUserActivityData(response.data);
+  //   });
+  // }, []);
+  // if (!apiUserActivityData) return null;
+
   if (active && payload && payload.length) {
     return (
       <div className="activity-custom-tooltip">
         <p className="kg">
-          {data.USER_ACTIVITY[0].sessions[0].kilogram}
+          {/* A revoir pour des données dynamiques depuis l'API */}
+          {data.USER_ACTIVITY[0].sessions[2].kilogram}
           {/* ? Comment appeler ces données ? */}
-          {/* {apiUserActivityData.data.kilogram} */}
+          {/* {apiUserActivityData.data.sessions.kilogram} */}
           {"kg"}
         </p>
         <p className="kcal">
-          {data.USER_ACTIVITY[0].sessions[0].calories}
+          {/* A revoir pour des données dynamiques depuis l'API */}
+          {data.USER_ACTIVITY[0].sessions[2].calories}
           {/* ? Comment appeler ces données ? */}
-          {/* {apiUserActivityData.data.calories} */}
+          {/* {apiUserActivityData.data.sessions.calories} */}
           {"Kcal"}
         </p>
       </div>
@@ -87,6 +98,7 @@ const Activity = () => {
             axisLine={false}
             tickLine={{ stroke: "" }}
             tickCount="3"
+            domain={["dataMin-2", "dataMax+1"]}
           />
           <YAxis
             yAxisId="calories"

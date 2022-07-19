@@ -1,8 +1,8 @@
 ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![SASS](https://img.shields.io/badge/SASS-hotpink.svg?style=for-the-badge&logo=SASS&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 
-# SportSee : sports coaching
+# SportSee: sports coaching
 
-This project creates a dashboard that aims for the user to follow all informations about his/her session, calories burned etc.
+This project from OpenClassrooms creates a dashboard that aims for the user to follow all informations about his/her session, kind of performance, calories burned, daily score etc.
 
 ## Technologies
 
@@ -40,17 +40,15 @@ Julien Verley
 - Project page will run on port http://localhost:3000
 - Keep the terminal opened
 - Open a new terminal
-- Clone my project JulienVerley_12_072022
-- Change the directory to cd JulienVerley_12_072022
+- Clone my project julien_verley_12_062022
+- Change the directory to cd julien_verley_12_062022
 - yarn command to install the dependencies
 - yarn start command to start the project
 - Keep the terminal opened
 - Lunch the React app on new port http://localhost:3100
 
-## URLs
+## URL
 
-## From mocked datas to API
-
-## Navigation
+http://localhost:3000
 
 ## JSdoc
