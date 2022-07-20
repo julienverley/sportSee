@@ -1,45 +1,43 @@
 import React, { useState, useEffect } from "react";
-// import data from "../data";
 import Activity from "./Activity";
 import Average from "./Average";
 import Activities from "./Activities";
 import Score from "./Score";
 import KeyDatas from "./KeyDatas";
 import axios from "axios";
-// import { getUserData } from "../utils/API";
+import ScoreLabel from "./ScoreLabel";
 
 // API call to get user data
 const baseURL = "http://localhost:3100/user/12";
+// const baseURLPerformance = "http://localhost:3100/user/12/performance";
+console.log(baseURL);
+// console.log(baseURLPerformance);
 
+/**
+ * Display dashboard informations.
+ * @returns JSX
+ */
 const Dashboard = () => {
   const [apiUserData, setApiUserData] = useState(null);
+
   useEffect(() => {
     // User data from API
     axios.get(baseURL).then((response) => {
       setApiUserData(response.data);
     });
+    // axios.get(baseURLPerformance).then((response) => {
+    //   setApiUserData(response.data);
+    // });
   }, []);
   if (!apiUserData) return null;
 
-  /* const [apiData, setApiData] = useState("");
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await getUserData();
-      const json = await response.json();
-      console.log(response);
-      setApiData(response);
-    };
-    fetchData().catch(console.error);
-  }, []); */
+  // console.log(apiUserData);
 
   return (
     <div className="dashboard">
       <div className="dashboard-header">
         <div className="dashboard-header-top">
           <div>Bonjour</div>
-          {/* <div className="dashboard-header-top-firstname">
-            {data.USER_MAIN_DATA[0].userInfos.firstName}
-          </div> */}
           <div className="dashboard-header-top-firstname">
             {apiUserData.data.userInfos.firstName}
           </div>
@@ -63,21 +61,28 @@ const Dashboard = () => {
             {/* Activities performance radar */}
             <div className="dashboard-main-3charts-activities">
               <Activities />
+              {/* <Activities performance={apiUserData.performance} /> */}
+              {/* console.log(apiUserData.data.performance); */}
             </div>
-            {/* Score */}
             <div className="dashboard-main-3charts-score">
-              {/* <Score score={data.USER_MAIN_DATA[0].todayScore * 100} /> */}
+              <div className="dashboard-main-3charts-score-title">Score</div>
               <Score
-              // score={
-              //   apiUserData.data.score * 100 ||
-              //   apiUserData.data.todayScore * 100
-              // }
+                score={
+                  apiUserData.data.score * 100 ||
+                  apiUserData.data.todayScore * 100
+                }
+              />
+              <ScoreLabel
+                score={
+                  apiUserData.data.score * 100 ||
+                  apiUserData.data.todayScore * 100
+                }
               />
             </div>
           </div>
         </div>
         {/* Key datas element */}
-        <KeyDatas />
+        <KeyDatas keydatas={apiUserData.data.keyData} />{" "}
       </div>
     </div>
   );

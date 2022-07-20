@@ -4,26 +4,24 @@
 
 This project from OpenClassrooms creates a dashboard that aims for the user to follow all informations about his/her session, kind of performance, calories burned, daily score etc.
 
-## Technologies
-
-- Javascript
-- React
-- CSS Sass
-- Recharts
-
 ## Author
 
 Julien Verley
 
-## Dependencies
+## Technologies and dependencies
 
+
+- Javascript
+- Node.js (v16.13.0)
 - React (v 18.2.0)
 - React-dom (v 18.2.0)
 - React-router-dom (v 6.3.0)
 - Axios (v 0.27.2)
 - Prop-types (v 15.8.1)
 - Recharts (v 2.1.12)
+- CSS Sass (v 1.53.0)
 - node-Sass (v 7.0.1)
+
 
 ## How to install
 

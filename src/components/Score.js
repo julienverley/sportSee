@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
-import ScoreLabel from "./ScoreLabel";
 import PropTypes from "prop-types";
-import axios from "axios";
 
-// API call to get user data
-const baseURL = "http://localhost:3100/user/12";
-
-const Score = () => {
-  const [apiUserData, setApiUserData] = useState(null);
-  useEffect(() => {
-    // User data from API
-    axios.get(baseURL).then((response) => {
-      setApiUserData(response.data);
-    });
-  }, []);
-  if (!apiUserData) return null;
- 
-  // Key from API, "todayScore" or "score" 
-  const score =
-    apiUserData.data.score * 100 || apiUserData.data.todayScore * 100;
-
+/**
+ *
+ * @param {score} API data props
+ * @returns API user score or todayScore data
+ */
+const Score = ({ score }) => {
   // create dataObject for params Rechart component
   const data = [
     {
@@ -35,19 +22,17 @@ const Score = () => {
       fill: "transparent",
     },
   ];
-  console.log(data);
 
   return (
     <>
-      <ScoreLabel />
       <ResponsiveContainer width="100%" height="100%">
         <PieChart width={800} height={400}>
           <Pie
             data={data}
             startAngle={80}
             endAngle={450}
-            innerRadius={88}
-            outerRadius={100}
+            innerRadius={78}
+            outerRadius={90}
             cornerRadius={10}
             dataKey="value"
           >

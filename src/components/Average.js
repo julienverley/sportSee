@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import data from "../data";
 import {
   LineChart,
   Line,
@@ -17,7 +16,7 @@ const formatXaxis = (value) => {
   const labels = ["L", "M", "M", "J", "V", "S", "D"];
   return labels[value - 1];
 };
-// White rectangle information on hover
+// Hover informations
 const CustomTooltip = ({ payload, active }) => {
   if (active) {
     return (
@@ -31,9 +30,8 @@ const CustomTooltip = ({ payload, active }) => {
   }
   return null;
 };
-// Background on hover
+// Hover background
 const CustomHover = ({ points }) => {
-  // console.log(points);
   return (
     <rect
       className="average-custom-hover"
@@ -71,20 +69,20 @@ const Average = () => {
           }}
           stroke="#ffffff"
           fillOpacity={0.5}
-          // data={data.USER_AVERAGE_SESSIONS[0].sessions}
           data={apiUserAverageData.data.sessions}
         >
           <XAxis
             dataKey="day"
             dy={10}
-            padding={{ left: 12, right: 12 }}
+            padding={{ left: 0, right: 0 }}
             axisLine={false}
             tickLine={false}
             stroke="#ffffff"
             fillOpacity={0.5}
             tickFormatter={formatXaxis}
+            interval={0} //
+            style={{ transform: "scale(0.93)", transformOrigin: "bottom" }}
           />
-          {/* <CartesianAxis width="50%" /> */}
           <YAxis hide={true} />
           <Tooltip content={<CustomTooltip />} cursor={<CustomHover />} />
           <Line

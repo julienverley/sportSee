@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import data from "../data";
 import {
   Radar,
   RadarChart,
@@ -24,8 +23,9 @@ const formatAngleAxis = (value) => {
   return kinds[value - 1];
 };
 
-const baseURL = "http://localhost:3100/user/18/performance";
+const baseURL = "http://localhost:3100/user/12/performance";
 
+// const Activities = ({ performance }) => {
 const Activities = () => {
   const [apiUserPerformanceData, setapiUserPerformanceData] = useState(null);
   useEffect(() => {
@@ -36,6 +36,8 @@ const Activities = () => {
   }, []);
   if (!apiUserPerformanceData) return null;
 
+  // console.log(performance);
+
   return (
     <ResponsiveContainer width="100%" height="100%">
       <RadarChart
@@ -44,8 +46,8 @@ const Activities = () => {
         outerRadius="65%"
         width="50%"
         height="50%"
-        // data={data.USER_PERFORMANCE[1].data}
         data={apiUserPerformanceData.data.data}
+        // data={performance}
         className="dashboard-main-3charts-activities-radarchart"
       >
         <PolarGrid radialLines={false} />
