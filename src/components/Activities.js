@@ -10,15 +10,19 @@ import {
 import PropTypes from "prop-types";
 import axios from "axios";
 
-// Format from numbers to strings
+/**
+ *
+ * @param {value} any
+ * @returns formated labels from numbers to strings
+ */
 const formatAngleAxis = (value) => {
   const kinds = [
-    "Intensité",
-    "Vitesse",
-    "Force",
-    "Endurance",
-    "Energie",
     "Cardio",
+    "Energie",
+    "Endurance",
+    "Force",
+    "Vitesse",
+    "Intensité",
   ];
   return kinds[value - 1];
 };
@@ -74,7 +78,7 @@ const Activities = () => {
 
 // Proptypes formatAngleAxis
 formatAngleAxis.propTypes = {
-  value: PropTypes.number.isRequired,
+  value: PropTypes.number,
 };
 
 export default Activities;

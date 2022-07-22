@@ -6,6 +6,7 @@ import Score from "./Score";
 import KeyDatas from "./KeyDatas";
 import axios from "axios";
 import ScoreLabel from "./ScoreLabel";
+import { getSelectionRange } from "@testing-library/user-event/dist/utils";
 
 // API call to get user data
 const baseURL = "http://localhost:3100/user/12";
@@ -19,7 +20,6 @@ console.log(baseURL);
  */
 const Dashboard = () => {
   const [apiUserData, setApiUserData] = useState(null);
-
   useEffect(() => {
     // User data from API
     axios.get(baseURL).then((response) => {

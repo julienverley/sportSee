@@ -10,7 +10,6 @@ Julien Verley
 
 ## Technologies and dependencies
 
-
 - Javascript
 - Node.js (v16.13.0)
 - React (v 18.2.0)
@@ -22,31 +21,66 @@ Julien Verley
 - CSS Sass (v 1.53.0)
 - node-Sass (v 7.0.1)
 
-
 ## How to install
 
 ### On your computer
 
-- Create a main directory
-- Clone the project P9-front-end-dashboard from Github into your computer. This repo contains all the source code to run the API for the analytics of the dashboard page.
+- Create main directory:
+
+```console
+$ mkdir <yourDirectory>
+```
+
+- Clone project P9-front-end-dashboard from Github into your computer. This repo contains all the source code to run the API for the analytics of the dashboard page:
+
+```console
+$ git clone https://github.com/OpenClassrooms-Student-Center/P9-front-end-dashboard
+```
 
 ### In the Visual Studio Code editor terminal
 
-- Change the directory to cd P9-front-end-dashboard
-- yarn command to install the dependencies
-- yarn dev command to run the micro API
+- Change directory to cd P9-front-end-dashboard
+- yarn command to install the dependencies:
+
+```console
+$ yarn install
+```
+
+- Run micro API:
+
+```console
+$ yarn dev
+```
+
 - Project page will run on port http://localhost:3000
-- Keep the terminal opened
-- Open a new terminal
-- Clone my project julien_verley_12_062022
-- Change the directory to cd julien_verley_12_062022
-- yarn command to install the dependencies
-- yarn start command to start the project
-- Keep the terminal opened
-- Lunch the React app on new port http://localhost:3100
+- Keep terminal open
+- Open new terminal
+- Clone my project:
 
-## URL
+```console
+$ git clone https://github.com/julfrontdev/julien_verley_12_062022
+```
 
-http://localhost:3000
+- Install dependencies:
 
-## JSdoc
+```console
+$ yarn install
+```
+
+- Start project:
+
+```console
+$ yarn start
+```
+
+- Keep terminal open
+- Launch React app on new port http://localhost:3100:
+
+```console
+$ yarn dev
+```
+
+## URLs
+
+Front-end : http://localhost:3000
+Back-end : http://localhost:3100

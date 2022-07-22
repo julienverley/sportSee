@@ -14,7 +14,13 @@ import axios from "axios";
 
 const baseURL = "http://localhost:3100/user/12/activity";
 
-// const CustomTooltip = ({ active, payload, apiUserActivityData }) => {
+/**
+ *
+ * @param {active}
+ * @returns hovered information UI with results in kg and kCal
+ * @param {payload}
+ * @returns API Activity sessions datas
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload && payload.length) {
     return (
@@ -109,11 +115,11 @@ const Activity = () => {
   );
 };
 
-// Proptypes of CustomTooltip
-// CustomTooltip.propTypes = {
-//   active: PropTypes.bool,
-//   payload: PropTypes.array,
-// };
+//Proptypes of CustomTooltip
+CustomTooltip.propTypes = {
+  active: PropTypes.bool,
+  payload: PropTypes.array,
+};
 
 // proptypes of Activity
 Activity.propTypes = {

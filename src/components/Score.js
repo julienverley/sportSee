@@ -4,11 +4,11 @@ import PropTypes from "prop-types";
 
 /**
  *
- * @param {score} API data props
+ * @param {score}
  * @returns API user score or todayScore data
  */
 const Score = ({ score }) => {
-  // create dataObject for params Rechart component
+  // data creates useable data array of objects for Score pie chart
   const data = [
     {
       name: "score-passed",
@@ -45,12 +45,11 @@ const Score = ({ score }) => {
   );
 };
 
-// A revoir
-// Score.propTypes = {
-//   score: PropTypes.number.isRequired,
-// };
-// Score.defaultProps = {
-//   score: "",
-// };
+Score.propTypes = {
+  score: PropTypes.number,
+};
+Score.defaultProps = {
+  score: "",
+};
 
 export default Score;

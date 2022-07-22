@@ -11,12 +11,23 @@ import AverageLabel from "./AverageLabel";
 import PropTypes from "prop-types";
 import axios from "axios";
 
-// Format date from numbers to strings
+/**
+ * Format date
+ * @param {value} any
+ * @returns formated date from numbers to strings
+ */
 const formatXaxis = (value) => {
   const labels = ["L", "M", "M", "J", "V", "S", "D"];
   return labels[value - 1];
 };
-// Hover informations
+
+/**
+ * Hover point informations
+ * @param {payload}
+ * @returns API Average sessions datas
+ * @param {active}
+ * @returns hovered information UI with sessionLength in minute unit
+ */
 const CustomTooltip = ({ payload, active }) => {
   if (active) {
     return (
@@ -28,9 +39,15 @@ const CustomTooltip = ({ payload, active }) => {
       </div>
     );
   }
+
   return null;
 };
-// Hover background
+
+/**
+ * Hover line background
+ * @param {points}
+ * @returns data points of line chart
+ */
 const CustomHover = ({ points }) => {
   return (
     <rect
@@ -89,6 +106,7 @@ const Average = () => {
             type="natural"
             dataKey="sessionLength"
             stroke="#ffffff"
+            dot={false}
             activeDot={{ r: 1 }}
           />
         </LineChart>
@@ -99,13 +117,18 @@ const Average = () => {
 
 // PropTypes formatXaxis
 formatXaxis.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
 
 // Proptypes customTooltip
 CustomTooltip.propTypes = {
   payload: PropTypes.array,
   active: PropTypes.bool,
+};
+
+// Proptypes customHover
+CustomHover.propTypes = {
+  points: PropTypes.array,
 };
 
 export default Average;

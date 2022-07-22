@@ -1,5 +1,11 @@
 import React from "react";
+import PropTypes from "prop-types";
 
+/**
+ *
+ * @param {score}
+ * @returns API user score or todayScore data
+ */
 const ScoreLabel = ({ score }) => {
   return (
     <div>
@@ -16,6 +22,13 @@ const ScoreLabel = ({ score }) => {
       </div>
     </div>
   );
+};
+
+ScoreLabel.propTypes = {
+  score: PropTypes.number,
+};
+ScoreLabel.defaultProps = {
+  score: "",
 };
 
 export default ScoreLabel;

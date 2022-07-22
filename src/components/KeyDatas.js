@@ -4,7 +4,13 @@ import calories from "../assets/icons/calories.svg";
 import protein from "../assets/icons/protein.svg";
 import carbs from "../assets/icons/carbs.svg";
 import fat from "../assets/icons/fat.svg";
+import PropTypes from "prop-types";
 
+/**
+ *
+ * @param {keydatas}
+ * @returns API user keydata object with calorieCount, proteinCount, carbohydrateCount and lipidCount
+ */
 const KeyDatas = ({ keydatas }) => {
   return (
     <div className="dashboard-keydatas">
@@ -35,6 +41,10 @@ const KeyDatas = ({ keydatas }) => {
       />
     </div>
   );
+};
+
+KeyDatas.propTypes = {
+  keydatas: PropTypes.object, // OK ?
 };
 
 export default KeyDatas;
