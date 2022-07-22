@@ -61,8 +61,7 @@ const Dashboard = () => {
             {/* Activities performance radar */}
             <div className="dashboard-main-3charts-activities">
               <Activities />
-              {/* <Activities performance={apiUserData.performance} /> */}
-              {/* console.log(apiUserData.data.performance); */}
+              {/* <Activities performance={apiUserData.performance} /> */}{" "}
             </div>
             <div className="dashboard-main-3charts-score">
               <div className="dashboard-main-3charts-score-title">Score</div>
