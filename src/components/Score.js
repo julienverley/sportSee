@@ -3,7 +3,7 @@ import { PieChart, Pie, Cell, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 
 /**
- *
+ * Display score informations
  * @param {score}
  * @returns API user score or todayScore data
  */

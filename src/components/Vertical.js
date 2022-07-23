@@ -4,6 +4,10 @@ import pool from "../assets/icons/pool.svg";
 import bike from "../assets/icons/bike.svg";
 import weight from "../assets/icons/weight.svg";
 
+/**
+ * Display vertical navbar elements
+ * @returns JSX
+ */
 const Vertical = () => {
   return (
     <div className="vertical">

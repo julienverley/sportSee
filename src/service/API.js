@@ -37,18 +37,7 @@ export const getUserDataAverageSessions = async () => {
 };
 
 // Get Performance data
-// export const getUserDataPerformance = async () => {
-//   try {
-//     const data = await axios.get("http://localhost:3100/user/12/performance");
-//     return data;
-//   } catch (error) {}
-// };
-// ou bien :
-//
-//
-// ----> Ajouter un try catch pour le fetch ----> alert("Désolé, une erreur est survenue !");
-//
-export const getUserDataPerformanceFetch = async () => {
+export const getUserDataPerformance = async () => {
   return fetch(
     `${process.env.REACT_APP_SERVER_URL}/user/${process.env.REACT_APP_USER_ID}/performance`
   )
@@ -59,5 +48,13 @@ export const getUserDataPerformanceFetch = async () => {
         return perf;
       });
       return transformedData;
+    })
+    .catch((error) => {
+      alert("Désolé, une erreur est survenue !");
+    })
+    .catch((error) => {
+      alert(
+        "Désolé, une erreur est survenue lors du traitement de votre performance !"
+      );
     });
 };

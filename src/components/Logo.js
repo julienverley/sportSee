@@ -1,5 +1,9 @@
 import React from "react";
 
+/**
+ * Display logo
+ * @returns JSX
+ */
 const Logo = () => {
   return (
     <div>

@@ -7,7 +7,7 @@ import fat from "../assets/icons/fat.svg";
 import PropTypes from "prop-types";
 
 /**
- *
+ * Display keyDatas elements
  * @param {keydatas}
  * @returns API user keydata object with calorieCount, proteinCount, carbohydrateCount and lipidCount
  */

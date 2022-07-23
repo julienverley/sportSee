@@ -16,7 +16,6 @@ import { getUserDataAverageSessions } from "../service/API";
  * @param {value} any
  * @returns formated date from numbers to strings
  */
-
 const formatXaxis = (value) => {
   const labels = ["L", "M", "M", "J", "V", "S", "D"];
   return labels[value - 1];
@@ -40,7 +39,6 @@ const CustomTooltip = ({ payload, active }) => {
       </div>
     );
   }
-
   return null;
 };
 
@@ -62,6 +60,10 @@ const CustomHover = ({ points }) => {
   );
 };
 
+/**
+ * Display average sesssions informations
+ * @returns JSX
+ */
 const Average = () => {
   const [apiUserAverageData, setApiUserAverageData] = useState(null);
   useEffect(() => {

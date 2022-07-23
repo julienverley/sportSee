@@ -29,7 +29,7 @@ const CustomTooltip = ({ active, payload }) => {
         </p>
         <p className="kcal">
           {payload[1].value}
-          {"Kcal"}
+          {"kCal"}
         </p>
       </div>
     );
@@ -37,6 +37,10 @@ const CustomTooltip = ({ active, payload }) => {
   return null;
 };
 
+/**
+ * Display activity informations
+ * @returns JSX
+ */
 const Activity = () => {
   const [apiUserActivityData, setapiUserActivityData] = useState(null);
   useEffect(() => {

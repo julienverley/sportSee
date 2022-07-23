@@ -2,6 +2,10 @@ import React from "react";
 import Logo from "./Logo";
 import { NavLink } from "react-router-dom";
 
+/**
+ * Display Header
+ * @returns JSX
+ */
 const Header = () => {
   return (
     <div className="header">

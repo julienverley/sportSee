@@ -7,17 +7,17 @@ import {
   PolarRadiusAxis,
   ResponsiveContainer,
 } from "recharts";
-import { getUserDataPerformanceFetch } from "../service/API.js";
+import { getUserDataPerformance } from "../service/API.js";
 
 /**
- *
+ * Display performance informations
  * @param {value} any
  * @returns formated labels from numbers to strings
  */
 const Performance = () => {
   const [apiUserPerformanceData, setapiUserPerformanceData] = useState(null);
   useEffect(() => {
-    getUserDataPerformanceFetch().then((response) => {
+    getUserDataPerformance().then((response) => {
       setapiUserPerformanceData(response);
     });
   }, []);

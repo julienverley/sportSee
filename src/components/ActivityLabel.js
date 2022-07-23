@@ -2,6 +2,10 @@ import React from "react";
 import diskgrey from "../assets/icons/diskgrey.svg";
 import diskred from "../assets/icons/diskred.svg";
 
+/**
+ * Display activity label informations
+ * @returns JSX
+ */
 const ActivityLabel = () => {
   return (
     <div className="dashboard-main-activity-header">

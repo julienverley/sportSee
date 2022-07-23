@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /**
- *
+ * Display score label
  * @param {score}
  * @returns API user score or todayScore data
  */

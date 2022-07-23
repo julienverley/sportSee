@@ -2,7 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 /**
- * Each keyData element
+ * Display each keyData element
+ * * @returns JSX
  * @param {icon}
  * * @returns matching icon
  * @param {keydata}

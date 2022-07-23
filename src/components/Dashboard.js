@@ -8,14 +8,12 @@ import ScoreLabel from "./ScoreLabel";
 import { getUserData } from "../service/API";
 
 /**
- * Display dashboard informations.
+ * Display dashboard informations
  * @returns JSX
  */
 const Dashboard = () => {
   const [apiUserData, setApiUserData] = useState(null);
-
   useEffect(() => {
-    // User data from API
     getUserData().then((response) => {
       setApiUserData(response.data);
     });
