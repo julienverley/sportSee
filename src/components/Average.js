@@ -9,13 +9,14 @@ import {
 } from "recharts";
 import AverageLabel from "./AverageLabel";
 import PropTypes from "prop-types";
-import axios from "axios";
+import { getUserDataAverageSessions } from "../service/API";
 
 /**
  * Format date
  * @param {value} any
  * @returns formated date from numbers to strings
  */
+
 const formatXaxis = (value) => {
   const labels = ["L", "M", "M", "J", "V", "S", "D"];
   return labels[value - 1];
@@ -61,13 +62,10 @@ const CustomHover = ({ points }) => {
   );
 };
 
-const baseURL = "http://localhost:3100/user/18/average-sessions";
-
 const Average = () => {
   const [apiUserAverageData, setApiUserAverageData] = useState(null);
   useEffect(() => {
-    // User Average data from API
-    axios.get(baseURL).then((response) => {
+    getUserDataAverageSessions().then((response) => {
       setApiUserAverageData(response.data);
     });
   }, []);
@@ -97,7 +95,7 @@ const Average = () => {
             stroke="#ffffff"
             fillOpacity={0.5}
             tickFormatter={formatXaxis}
-            interval={0} //
+            interval={0}
             style={{ transform: "scale(0.93)", transformOrigin: "bottom" }}
           />
           <YAxis hide={true} />
@@ -117,7 +115,7 @@ const Average = () => {
 
 // PropTypes formatXaxis
 formatXaxis.propTypes = {
-  value: PropTypes.string,
+  value: PropTypes.string.isRequired,
 };
 
 // Proptypes customTooltip

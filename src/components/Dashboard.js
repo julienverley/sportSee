@@ -1,18 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Activity from "./Activity";
 import Average from "./Average";
-import Activities from "./Activities";
+import Performance from "./Performance";
 import Score from "./Score";
 import KeyDatas from "./KeyDatas";
-import axios from "axios";
 import ScoreLabel from "./ScoreLabel";
-import { getSelectionRange } from "@testing-library/user-event/dist/utils";
-
-// API call to get user data
-const baseURL = "http://localhost:3100/user/12";
-// const baseURLPerformance = "http://localhost:3100/user/12/performance";
-console.log(baseURL);
-// console.log(baseURLPerformance);
+import { getUserData } from "../service/API";
 
 /**
  * Display dashboard informations.
@@ -20,18 +13,14 @@ console.log(baseURL);
  */
 const Dashboard = () => {
   const [apiUserData, setApiUserData] = useState(null);
+
   useEffect(() => {
     // User data from API
-    axios.get(baseURL).then((response) => {
+    getUserData().then((response) => {
       setApiUserData(response.data);
     });
-    // axios.get(baseURLPerformance).then((response) => {
-    //   setApiUserData(response.data);
-    // });
   }, []);
   if (!apiUserData) return null;
-
-  // console.log(apiUserData);
 
   return (
     <div className="dashboard">
@@ -48,21 +37,21 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-main">
         <div className="dashboard-main">
-          {/* Up : Activity */}
+          {/* Top : Activity */}
           <div className="dashboard-main-activity">
             <Activity />
           </div>
           {/* Down : 3 charts */}
           <div className="dashboard-main-3charts">
-            {/* Sessions average length */}
+            {/* Average graph */}
             <div className="dashboard-main-3charts-average">
               <Average />
             </div>
-            {/* Activities performance radar */}
-            <div className="dashboard-main-3charts-activities">
-              <Activities />
-              {/* <Activities performance={apiUserData.performance} /> */}{" "}
+            {/* Radar graph */}
+            <div className="dashboard-main-3charts-performance">
+              <Performance />
             </div>
+            {/* Pie graph */}
             <div className="dashboard-main-3charts-score">
               <div className="dashboard-main-3charts-score-title">Score</div>
               <Score
@@ -80,8 +69,8 @@ const Dashboard = () => {
             </div>
           </div>
         </div>
-        {/* Key datas element */}
-        <KeyDatas keydatas={apiUserData.data.keyData} />{" "}
+        {/* Vertical right element */}
+        <KeyDatas keydatas={apiUserData.data.keyData} />
       </div>
     </div>
   );

@@ -30,9 +30,16 @@ const KeyData = ({ icon, keydata, unit, type }) => {
 
 KeyData.propTypes = {
   icon: PropTypes.string,
-  keydata: PropTypes.number,
+  keydata: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   unit: PropTypes.string,
   type: PropTypes.string,
+};
+
+KeyData.defaultProps = {
+  icon: "",
+  keydata: 0,
+  unit: "",
+  type: "",
 };
 
 export default KeyData;

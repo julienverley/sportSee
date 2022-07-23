@@ -28,7 +28,7 @@ ScoreLabel.propTypes = {
   score: PropTypes.number,
 };
 ScoreLabel.defaultProps = {
-  score: "",
+  score: 0,
 };
 
 export default ScoreLabel;

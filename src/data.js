@@ -194,10 +194,10 @@ const USER_PERFORMANCE = [
       5: "speed",
       6: "intensity",
     },
-    data: [
+    data: [ // mapper ce tableau data.map(perf => ...)
       {
         value: 80,
-        kind: 1,
+        kind: 1, // remplace 1 par kind[1]
       },
       {
         value: 120,

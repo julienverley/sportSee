@@ -29,8 +29,7 @@
             display: flex;
             flex-direction: column;
 
-
-             // Up : Activity
+             // Top : Activity
             .dashboard-main-activity {
                 display: flex;
                 flex-direction: column;
@@ -86,7 +85,6 @@
                 }
             }
 
-
             // Down : 3 charts
             .dashboard-main-3charts {
                 display: flex;
@@ -94,8 +92,7 @@
                 width: 835px; // 
                 height: 258px;
 
-
-                // Sessions average length
+                // Average graph
                 .dashboard-main-3charts-average {
                     position: relative;
                     background-color: $color-3;
@@ -113,21 +110,19 @@
                     }
                 }
 
-
-                // Activities performance radar
-                .dashboard-main-3charts-activities {
+                // Performance radar graph
+                .dashboard-main-3charts-performance {
                     background-color: #282D30;
                     width: 263px; //
                     border-radius: 5px;
                     margin: 0 30px;
 
-                    .dashboard-main-3charts-activities-radarchart {
+                    .dashboard-main-3charts-performance-radarchart {
                         font-size: 12px;
                     }
                 }
 
-
-                // Score 
+                // Score pie graph 
                 .dashboard-main-3charts-score {
                     position: relative;
                     background-color: #FBFBFB;
@@ -169,8 +164,7 @@
             }
         }
 
-
-        // Key datas 
+        // Key datas vertical right
         .dashboard-keydatas {
             display: flex;
             flex-direction: column;

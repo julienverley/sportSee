@@ -49,7 +49,7 @@ Score.propTypes = {
   score: PropTypes.number,
 };
 Score.defaultProps = {
-  score: "",
+  score: 0,
 };
 
 export default Score;

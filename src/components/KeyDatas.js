@@ -16,9 +16,8 @@ const KeyDatas = ({ keydatas }) => {
     <div className="dashboard-keydatas">
       <KeyData
         icon={calories}
-        // keydata={apiUserData.data.keyData.calorieCount}
-        keydata={keydatas.calorieCount}
-        unit={"KCal"}
+        keydata={keydatas.calorieCount.toLocaleString("en-US")} // Add a "," to kCal number
+        unit={"kCal"}
         type={"Calories"}
       />
       <KeyData
@@ -44,7 +43,7 @@ const KeyDatas = ({ keydatas }) => {
 };
 
 KeyDatas.propTypes = {
-  keydatas: PropTypes.object, // OK ?
+  keydatas: PropTypes.object,
 };
 
 export default KeyDatas;

@@ -11,7 +11,7 @@ const ActivityLabel = () => {
       <div className="dashboard-main-activity-header-right">
         <div className="dashboard-main-activity-header-kg">
           <div className="dashboard-main-activity-header-kg-icon">
-            <img src={diskgrey} />
+            <img src={diskgrey} alt="grey disk icon" />
           </div>
           <div className="dashboard-main-activity-header-legend">
             Poids (kg)
@@ -19,7 +19,7 @@ const ActivityLabel = () => {
         </div>
         <div className="dashboard-main-activity-header-kcal">
           <div className="dashboard-main-activity-header-kcal-icon">
-            <img src={diskred} />
+            <img src={diskred} alt="red disk icon" />
           </div>
           <div className="dashboard-main-activity-header-legend">
             Calories brûlées (kCal)

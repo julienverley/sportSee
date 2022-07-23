@@ -10,9 +10,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import PropTypes from "prop-types";
-import axios from "axios";
-
-const baseURL = "http://localhost:3100/user/12/activity";
+import { getUserDataActivity } from "../service/API";
 
 /**
  *
@@ -42,8 +40,7 @@ const CustomTooltip = ({ active, payload }) => {
 const Activity = () => {
   const [apiUserActivityData, setapiUserActivityData] = useState(null);
   useEffect(() => {
-    // User Activity data from API
-    axios.get(baseURL).then((response) => {
+    getUserDataActivity().then((response) => {
       setapiUserActivityData(response.data);
     });
   }, []);
