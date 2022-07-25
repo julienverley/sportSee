@@ -28,7 +28,7 @@ const Performance = () => {
       <RadarChart
         cx="50%"
         cy="50%"
-        outerRadius="65%"
+        outerRadius="55%"
         width="50%"
         height="50%"
         data={apiUserPerformanceData}

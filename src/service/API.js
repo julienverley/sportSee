@@ -44,7 +44,9 @@ export const getUserDataPerformance = async () => {
     .then((response) => response.json())
     .then((jsonResponse) => {
       const transformedData = jsonResponse.data.data.map((perf) => {
-        perf.kind = jsonResponse.data.kind[perf.kind];
+        perf.kind =
+          jsonResponse.data.kind[perf.kind][0].toUpperCase() +
+          jsonResponse.data.kind[perf.kind].slice(1);
         return perf;
       });
       return transformedData;
