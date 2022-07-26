@@ -45,7 +45,7 @@ const Activity = () => {
   const [apiUserActivityData, setapiUserActivityData] = useState(null);
   useEffect(() => {
     getUserDataActivity().then((response) => {
-      setapiUserActivityData(response.data);
+      setapiUserActivityData(response);
     });
   }, []);
   if (!apiUserActivityData) return null;
@@ -55,7 +55,7 @@ const Activity = () => {
       <ActivityLabel />
       <ResponsiveContainer width="100%" height="100%">
         <BarChart
-          data={apiUserActivityData.data.sessions}
+          data={apiUserActivityData}
           barGap={8}
           margin={{
             top: 5,
@@ -70,7 +70,6 @@ const Activity = () => {
             dy={15}
             stroke="#9B9EAC"
             tickLine={{ stroke: "" }}
-            tickFormatter={(date) => new Date(date).getDate()}
             padding={{
               top: 0,
               right: -45,

@@ -52,18 +52,8 @@ const Dashboard = () => {
             {/* Pie graph */}
             <div className="dashboard-main-3charts-score">
               <div className="dashboard-main-3charts-score-title">Score</div>
-              <Score
-                score={
-                  apiUserData.data.score * 100 ||
-                  apiUserData.data.todayScore * 100
-                }
-              />
-              <ScoreLabel
-                score={
-                  apiUserData.data.score * 100 ||
-                  apiUserData.data.todayScore * 100
-                }
-              />
+              <Score score={apiUserData.data.finalScore} />
+              <ScoreLabel score={apiUserData.data.finalScore} />
             </div>
           </div>
         </div>

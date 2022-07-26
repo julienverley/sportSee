@@ -6,6 +6,8 @@ export const getUserData = async () => {
     const data = await axios.get(
       `${process.env.REACT_APP_SERVER_URL}/user/${process.env.REACT_APP_USER_ID}`
     );
+    data.data.data.finalScore =
+      data.data.data.score * 100 || data.data.data.todayScore * 100;
     return data;
   } catch (error) {
     alert("Désolé, une erreur est survenue !");
@@ -14,14 +16,20 @@ export const getUserData = async () => {
 
 // Get Activity data
 export const getUserDataActivity = async () => {
-  try {
-    const data = await axios.get(
-      `${process.env.REACT_APP_SERVER_URL}/user/${process.env.REACT_APP_USER_ID}/activity`
-    );
-    return data;
-  } catch (error) {
-    alert("Désolé, une erreur est survenue !");
-  }
+  return fetch(
+    `${process.env.REACT_APP_SERVER_URL}/user/${process.env.REACT_APP_USER_ID}/activity`
+  )
+    .then((response) => response.json())
+    .then((jsonResponse) => {
+      const transformedData = jsonResponse.data.sessions.map((session) => {
+        session.day = new Date(session.day).getDate();
+        return session;
+      });
+      return transformedData;
+    })
+    .catch((error) => {
+      alert("Désolé, une erreur est survenue !");
+    });
 };
 
 // Get Average sessions data
