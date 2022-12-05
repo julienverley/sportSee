@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "./static/css/main.4b5553f5.css",
+    "main.js": "./static/js/main.9e02f5c1.js",
+    "static/js/787.0edb382c.chunk.js": "./static/js/787.0edb382c.chunk.js",
+    "static/media/Roboto-Medium.ttf": "./static/media/Roboto-Medium.7c8d04cd831df3033c8a.ttf",
+    "static/media/Roboto-Regular.ttf": "./static/media/Roboto-Regular.fc2b5060f7accec5cf74.ttf",
+    "static/media/Roboto-Bold.ttf": "./static/media/Roboto-Bold.f80816a5455d171f948d.ttf",
+    "static/media/pool.svg": "./static/media/pool.e26dba434236828a108a786d8215cd31.svg",
+    "static/media/bike.svg": "./static/media/bike.d516c0e89dbb3aaab23afac6a130ca06.svg",
+    "static/media/carbs.svg": "./static/media/carbs.aa0e74661df8c71ea59cbe777ac24615.svg",
+    "static/media/fat.svg": "./static/media/fat.82c6cb9fd2b3e6307fca82c2f796ed14.svg",
+    "static/media/protein.svg": "./static/media/protein.c285979616f56dc9dfa457e51c583d68.svg",
+    "static/media/yoga.svg": "./static/media/yoga.6c31a2775a609d06fd5d99eb347250ed.svg",
+    "static/media/calories.svg": "./static/media/calories.5db5a3aff9bd8f441f49792782c8262e.svg",
+    "index.html": "./index.html",
+    "static/media/weight.svg": "./static/media/weight.4fe7fb9fe3554121b3d42dcb489eefd0.svg",
+    "static/media/diskgrey.svg": "./static/media/diskgrey.87435df808ca0eef72a70d943ebd00f0.svg",
+    "static/media/diskred.svg": "./static/media/diskred.5e6d1eeca5a048cb5122d76e32adf1bb.svg",
+    "main.4b5553f5.css.map": "./static/css/main.4b5553f5.css.map",
+    "main.9e02f5c1.js.map": "./static/js/main.9e02f5c1.js.map",
+    "787.0edb382c.chunk.js.map": "./static/js/787.0edb382c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b5553f5.css",
+    "static/js/main.9e02f5c1.js"
+  ]
+}
