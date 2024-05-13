@@ -58,7 +58,7 @@ $ yarn dev
 - Clone my project:
 
 ```console
-$ git clone https://github.com/julfrontdev/julien_verley_12_062022
+$ git clone https://github.com/julienverley/sportSee
 ```
 
 - Install dependencies:
